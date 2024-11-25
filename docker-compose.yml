@@ -1,0 +1,34 @@
+version: '3'
+services:
+  db:
+    image: mysql:latest
+    container_name: mysql_learning
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'learning_db'
+      MYSQL_USER: 'learning'
+      MYSQL_PASSWORD: 'learning'
+      MYSQL_ROOT_PASSWORD: 'learning'
+    ports:
+      - "3306:3306"
+    expose:
+      - "3306"
+    volumes:
+      - ./infra_/mysql/storage/_data:/var/lib/mysql
+  learning-service:
+    container_name: demo_application
+    build:
+      dockerfile: Dockerfile
+    image: demo_application:latest
+    environment:
+      - DB_HOST=mysql_learning
+      - DB_NAME=learning_db
+      - DB_USERNAME=learning
+      - DB_PASSWORD=learning
+      - DB_PORT=3306
+    ports:
+      - "8080:8080"
+    expose:
+      - "8080"
+    volumes:
+      - ./infra_/logs/:/logs/
