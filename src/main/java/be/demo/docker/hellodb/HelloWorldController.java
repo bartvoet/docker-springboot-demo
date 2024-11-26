@@ -1,4 +1,4 @@
-package com.example.demo;
+package be.demo.docker.hellodb;
 
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;

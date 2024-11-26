@@ -1,4 +1,4 @@
-package com.example.demo;
+package be.demo.docker.hellodb;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

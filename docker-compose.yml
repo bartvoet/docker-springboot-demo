@@ -1,4 +1,3 @@
-version: '3'
 services:
   db:
     image: mysql:latest
@@ -16,10 +15,10 @@ services:
     volumes:
       - ./.infra/mysql/storage/_data:/var/lib/mysql
   learning-service:
-    container_name: demo_application
+    container_name: demodb_application
     build:
       dockerfile: Dockerfile
-    image: demo_application:latest
+    image: demodb_application:latest
     environment:
       - DB_HOST=mysql_learning
       - DB_NAME=learning_db
