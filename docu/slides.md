@@ -651,7 +651,7 @@ $
 
 ### Step 7: test
 
-~~~
+~~~bash
 $ curl http://localhost:8080/sayhello?hello=first_message
 You said first_message
 $ curl http://localhost:8080/listhellos

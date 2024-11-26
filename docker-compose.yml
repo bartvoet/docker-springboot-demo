@@ -16,6 +16,9 @@ services:
       - ./.infra/mysql/storage/_data:/var/lib/mysql
   learning-service:
     container_name: demodb_application
+    depends_on:
+      db:
+        condition: service_started
     build:
       dockerfile: Dockerfile
     image: demodb_application:latest
