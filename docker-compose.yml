@@ -14,7 +14,7 @@ services:
     expose:
       - "3306"
     volumes:
-      - ./infra_/mysql/storage/_data:/var/lib/mysql
+      - ./.infra/mysql/storage/_data:/var/lib/mysql
   learning-service:
     container_name: demo_application
     build:
@@ -31,4 +31,4 @@ services:
     expose:
       - "8080"
     volumes:
-      - ./infra_/logs/:/logs/
+      - ./.infra/logs/:/logs/
