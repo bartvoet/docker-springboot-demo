@@ -1,19 +1,6 @@
+include:
+  - docker-compose-db.yml
 services:
-  db:
-    image: mysql:latest
-    container_name: mysql_learning
-    restart: always
-    environment:
-      MYSQL_DATABASE: 'learning_db'
-      MYSQL_USER: 'learning'
-      MYSQL_PASSWORD: 'learning'
-      MYSQL_ROOT_PASSWORD: 'learning'
-    ports:
-      - "3306:3306"
-    expose:
-      - "3306"
-    volumes:
-      - ./.infra/mysql/storage/_data:/var/lib/mysql
   learning-service:
     container_name: demodb_application
     depends_on:
